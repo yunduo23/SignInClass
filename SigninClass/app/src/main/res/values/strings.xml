@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SigninClass</string>
+    <string name="course">课程</string>
+    <string name="home">个人中心</string>
 </resources>
