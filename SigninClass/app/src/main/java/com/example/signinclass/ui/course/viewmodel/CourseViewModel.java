@@ -1,4 +1,4 @@
-package com.example.signinclass.ui.course;
+package com.example.signinclass.ui.course.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
