@@ -1,6 +1,6 @@
 package com.example.signinclass.ui.course;
 
-import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.signinclass.R;
-import com.example.signinclass.publicModule.bean.CourseBean;
 import com.example.signinclass.publicModule.bean.CourseRecord;
 
 import java.util.List;
+
 
 public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecyclerViewAdapter.CourseViewHolder> {
     private List<CourseRecord> courseRecordsList;
@@ -22,7 +24,6 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
     public CourseRecyclerViewAdapter(List<CourseRecord> courseData){
         this.courseRecordsList = courseData;
     }
-
 
     @NonNull
     @Override
@@ -36,7 +37,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         CourseRecord courseRecord = courseRecordsList.get(position);
         holder.tv_collegeName.setText(courseRecord.collegeName);
         holder.tv_courseName.setText(courseRecord.courseName);
-        // TODO 加载网络图片
+        Glide.with(holder.iv_image.getContext()).load(courseRecord.coursePhoto).placeholder(R.drawable.placeholder).error(R.drawable.placeholder).into(holder.iv_image);
     }
 
     @Override

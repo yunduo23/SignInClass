@@ -43,28 +43,26 @@ public class CourseFragment extends Fragment {
         View root = binding.getRoot();
         binding.courseRecyclerview.setLayoutManager(new LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL,false));
         courseRecyclerViewAdapter = new CourseRecyclerViewAdapter(courseRecordList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.VERTICAL,false);
         binding.courseRecyclerview.setAdapter(courseRecyclerViewAdapter);
+        binding.courseRecyclerview.setLayoutManager(linearLayoutManager);
         Retrofit retrofitInstance = RetrofitClient.getRetrofitInstance();
         CourseService courseService = retrofitInstance.create(CourseService.class);
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        courseService.getAllCourseListByPaging(0,10).enqueue(new Callback<CourseBean>() {
             @Override
-            public void onClick(View v) {
-                courseService.getAllCourseListByPaging(0,10).enqueue(new Callback<CourseBean>() {
-                    @Override
-                    public void onResponse(Call<CourseBean> call, Response<CourseBean> response) {
-                        CourseBean courseBean = response.body();
-                        CourseData courseData = courseBean.data;
-                        courseRecordList = courseData.records;
-                        courseRecyclerViewAdapter = new CourseRecyclerViewAdapter(courseRecordList);
-                        binding.courseRecyclerview.setAdapter(courseRecyclerViewAdapter);
-                    }
-
-                    @Override
-                    public void onFailure(Call<CourseBean> call, Throwable t) {
-
-                    }
-                });
+            public void onResponse(Call<CourseBean> call, Response<CourseBean> response) {
+                CourseBean courseBean = response.body();
+                CourseData courseData = courseBean.data;
+                courseRecordList = courseData.records;
+                courseRecyclerViewAdapter = new CourseRecyclerViewAdapter(courseRecordList);
+                binding.courseRecyclerview.setAdapter(courseRecyclerViewAdapter);
             }
+
+            @Override
+            public void onFailure(Call<CourseBean> call, Throwable t) {
+
+            }
+
         });
 
         return root;
