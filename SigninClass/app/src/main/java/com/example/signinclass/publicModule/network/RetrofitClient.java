@@ -1,8 +1,6 @@
 package com.example.signinclass.publicModule.network;
 
 import com.example.signinclass.publicModule.constants.NetworkConstants;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

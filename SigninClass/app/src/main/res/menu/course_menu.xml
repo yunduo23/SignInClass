@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/add_course"
+        android:id="@+id/add_course"
+        android:orderInCategory="1"
+        app:showAsAction="collapseActionView|withText"
+        android:icon="@drawable/add"/>
+
+    <item android:title="发起签到"
+        android:id="@+id/start_signin"
+        android:orderInCategory="2"
+        app:showAsAction="collapseActionView|withText"
+        android:icon="@drawable/add"/>
+</menu>

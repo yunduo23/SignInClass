@@ -2,6 +2,8 @@
     <string name="app_name">SigninClass</string>
     <string name="course">课程</string>
     <string name="home">个人中心</string>
-    <string name="courseName">课程名称</string>
-    <string name="collegeName">学院名称</string>
+    <string name="courseName">课程名称：</string>
+    <string name="collegeName">学院名称：</string>
+    <string name="add_course">添加课程</string>
+
 </resources>
