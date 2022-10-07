@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.addCourse.AddCourseFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/add_college_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/collegeName"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/add_college_name_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="计算机与信息安全学院"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_college_name"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/add_college_name_content"
+                app:layout_constraintStart_toStartOf="@+id/add_college_name_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/add_course_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/courseName"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/add_course_name_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="计算机组成原理"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_course_name"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/add_course_name_content"
+                app:layout_constraintStart_toStartOf="@+id/add_course_name_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/add_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加图片："
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/add_picture_content"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toEndOf="@+id/add_picture"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/placeholder"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/course_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程简介："
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="20dp" />
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toBottomOf="@+id/course_description"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/scrollview_shape_radius"
+                android:padding="8dp">
+                <TextView
+                    android:id="@+id/course_description_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:textSize="16dp"
+                    android:text="12421421414"
+                    app:layout_constraintTop_toBottomOf="parent" />
+            </ScrollView>
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/course_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程开始时间："
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/course_start_time_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/course_start_time"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/course_start_time_content"
+                app:layout_constraintStart_toStartOf="@+id/course_start_time_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/course_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程结束时间："
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/course_end_time_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/course_end_time"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/course_end_time_content"
+                app:layout_constraintStart_toStartOf="@+id/course_end_time_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/course_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程状态："
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/course_state_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/course_state"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/course_state_content"
+                app:layout_constraintStart_toStartOf="@+id/course_state_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</FrameLayout>
